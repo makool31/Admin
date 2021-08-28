@@ -1,6 +1,6 @@
 .dashboard{
    
-    background-color: darkslategray;
+    background-color: rgb(231, 240, 240);
     height: 80px;
     display: flex;
     justify-content: start;

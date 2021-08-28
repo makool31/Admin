@@ -1,14 +1,23 @@
-import React, {useState} from 'react'
-import * as FaIcons from 'react-icons/fa'
-import * as AIIcons from 'react-icons/ai'
-import {Link} from 'react-router-dom'
-import {SidebarData} from './SidebarData'
-import LoginForm from './LoginForm'
+import React, {useState} from 'react';
+import * as FaIcons from 'react-icons/fa';
+import * as AIIcons from 'react-icons/ai';
+import {Link} from 'react-router-dom';
+import {SidebarData} from './SidebarData';
+import {Redirect} from 'react-router-dom';
 
- function Dashboard ({Dashboard, error}) {
+
+
+ function Dashboard ({Dashboard, error},  {authorized}) {
     const[sidebar, setSidar] = useState(false)
 
     const showSidbar=()=> setSidar(!sidebar)
+
+     if (!authorized){
+         return <Redirect to="/"/>;
+
+     }
+
+   
     return (
         <>
         <div className='dashboard'>
@@ -39,4 +48,4 @@ import LoginForm from './LoginForm'
     )
 }
 
-export default Dashboard
+export default Dashboard;
